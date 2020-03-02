@@ -1,0 +1,272 @@
+<article class="resume page">
+
+  <section class="page__section page__section--style1">
+
+    <a
+      href="./assets/clifford_nelson_resume.pdf"
+      class="social__link"
+      target="_blank"
+      mat-button
+      color="secondary"
+      style="float: right;">
+      <span class="social__icon icon-resume"></span>
+      Download the full resume.pdf
+    </a>
+
+    <br>
+    <br>
+
+    <h1 class="page__headline">Clifford Ryan Nelson</h1>
+
+
+
+    <div
+      class=""
+      [style.maxWidth.px]="720"
+      [style.margin]="'0 auto'"
+      >
+
+
+
+
+
+
+      <h2 class="resume_sub-headline">Recent Positions</h2>
+
+        <!-- <h2 class="resume_sub-headline">Relevant Experience</h2> -->
+
+        <p>
+          I’ve been working with digital media for over 10 years and have a passion for design & innovation with the user at the center of everything. I can communicate concepts by rapidly prototyping delightful and engaging experiences, utilizing front-end technologies for high-fidelity and production ready results. I can also work independently on multiple projects, and incorporate feedback from team members across an organization.
+        </p>
+
+
+        <mat-accordion [style.textAlign]="'left'">
+
+          <mat-expansion-panel *ngFor="let position of positions">
+            <mat-expansion-panel-header>
+              <mat-panel-title>{{position.title}}</mat-panel-title>
+              <mat-panel-description>{{position.employer}}</mat-panel-description>
+            </mat-expansion-panel-header>
+            <p [innerHtml]="position.jobDesc"></p>
+          </mat-expansion-panel>
+
+        </mat-accordion>
+
+
+
+    </div>
+
+  </section>
+
+  <section class="page__section page__section--style2">
+
+
+
+    <div
+      class=""
+      [style.maxWidth.px]="720"
+      [style.margin]="'0 auto'"
+      >
+
+
+
+        <h2 class="resume_sub-headline">Education</h2>
+
+        <p>
+          In 2014 I graduated from Platt College in San Diego, earning a Bachelors degree in Media Design, and receiving the honor of valedictorian of my class with a 4.0 GPA.
+        </p>
+
+        <mat-accordion [style.textAlign]="'left'">
+
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>Associates Degree, Graphic Design</mat-panel-title>
+              <mat-panel-description>Platt College San Diego, 2011–2012</mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>GPA: 4.0, Class Valedictorian</p>
+            <p>Relevant Coursework:</p>
+            <ul>
+              <li>Fundamentals of Web Design</li>
+              <li>Web Campaign Implementation</li>
+              <li>Design for Usability</li>
+              <li>Responsive Web Design</li>
+              <li>Programming for Designers</li>
+              <li>Scripting for the Web</li>
+              <li>Content Management Systems</li>
+            </ul>
+          </mat-expansion-panel>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>Bachelors Degree, Media Design</mat-panel-title>
+              <mat-panel-description>Platt College San Diego, 2012–2014</mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>GPA: 4.0, Class Valedictorian</p>
+            <p>Relevant Coursework:</p>
+            <ul>
+              <li>Fundamentals of Web Design</li>
+              <li>Web Campaign Implementation</li>
+              <li>Design for Usability</li>
+              <li>Responsive Web Design</li>
+              <li>Programming for Designers</li>
+              <li>Scripting for the Web</li>
+              <li>Content Management Systems</li>
+            </ul>
+          </mat-expansion-panel>
+
+        </mat-accordion>
+
+
+
+
+
+
+
+
+
+    </div>
+  </section>
+
+  <section class="page__section page__section--style1">
+
+    <div
+      class=""
+      [style.maxWidth.px]="720"
+      [style.margin]="'0 auto'"
+      >
+
+
+
+        <h2 class="resume_sub-headline">Technical</h2>
+
+        <p>A true hybrid designer, I express design intent in the front-end for rapid high fidelity design explorations and for production ready creative assets.</p>
+
+        <mat-accordion [style.textAlign]="'left'">
+
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>Design Canvas</mat-panel-title>
+              <mat-panel-description>no restrictions</mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <p>In a project where I'm free to establish my own architecture I lean towards using the latest stable version of Angular and add Material as a starting point.
+            </p>
+            <p>While Angular has a lot of great animation tools I like to use specialty libraries for special projects. GSAP is great for interaction animations: like custom progress spinners or fancy active indictors.</p>
+            <p>I've been experimenting with game play using box2D, these exersizes have been focused on playable of concepts rather than artwork.</p>
+              <ul>
+                <li>Angular + Material</li>
+                <li>GSAP, threeJS, box2D</li>
+              </ul>
+              <ul>
+                <li>HTML</li>
+                <li>CSS (LESS/SASS)</li>
+                <li>JavaScript</li>
+                <li>jQuery</li>
+                <li>React</li>
+                <li>Angular</li>
+                <li>JSON</li>
+                <li>PHP</li>
+                <li>MySQL</li>
+              </ul>
+
+
+              Keywords:
+              <ul>
+                <li>Web Design</li>
+                <li>Web Development</li>
+                <li>Responsive Wed Design</li>
+                <li>HTML5</li>
+                <li>CSS3 (+preprocessors)</li>
+                <li>JavaScript</li>
+                <li>JSON</li>
+                <li>TypeScript</li>
+                <li>ES6</li>
+                <li>jQuery</li>
+                <li>NPM</li>
+                <li>GSAP</li>
+                <li>Box2D</li>
+                <li>Planck</li>
+                <li>three.js</li>
+                <li>canvas</li>
+                <li>Angular</li>
+                <li>Material</li>
+                <li>Bootstrap</li>
+                <li>Grunt/Gulp</li>
+                <li>PHP</li>
+                <li>Git</li>
+                <li>UI/UX Prototyping</li>
+                <li>Adobe Creative Suite</li>
+                <li>CLI</li>
+
+              </ul>
+
+
+          </mat-expansion-panel>
+
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>Production Assets</mat-panel-title>
+              <mat-panel-description>ready for the pipeline</mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <p>Developing creative assets from scratch and in templates ready for export to the pipeline.</p>
+              <ul>
+                <li>Angular + Material</li>
+                <li>GSAP, threeJS, box2D</li>
+              </ul>
+              <ul>
+                <li>HTML</li>
+                <li>Handlebars</li>
+                <li>CSS (LESS/SASS)</li>
+                <li>JavaScript</li>
+                <li>jQuery</li>
+                <li>React</li>
+                <li>Angular</li>
+                <li>JSON</li>
+                <li>PHP</li>
+                <li>MySQL</li>
+              </ul>
+
+
+              Keywords:
+              <ul>
+                <li>Web Design</li>
+                <li>Web Development</li>
+                <li>Responsive Wed Design</li>
+                <li>HTML5</li>
+                <li>CSS3 (+preprocessors)</li>
+                <li>JavaScript</li>
+                <li>JSON</li>
+                <li>TypeScript</li>
+                <li>ES6</li>
+                <li>jQuery</li>
+                <li>NPM</li>
+                <li>GSAP</li>
+                <li>Box2D</li>
+                <li>Planck</li>
+                <li>three.js</li>
+                <li>canvas</li>
+                <li>Angular</li>
+                <li>Material</li>
+                <li>Bootstrap</li>
+                <li>Grunt/Gulp</li>
+                <li>PHP</li>
+                <li>Git</li>
+                <li>UI/UX Prototyping</li>
+                <li>Adobe Creative Suite</li>
+                <li>CLI</li>
+
+              </ul>
+
+
+          </mat-expansion-panel>
+
+        </mat-accordion>
+
+
+
+
+    </div>
+
+  </section>
+
+</article>

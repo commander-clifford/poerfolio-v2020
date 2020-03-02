@@ -1,0 +1,32 @@
+<article class="portfolio page">
+
+  <section class="page__section page__section--full-width" style="min-height: 60vh;">
+
+    <div *ngIf="!isDataAvailable">
+
+      <div class="indicators-container growy-three-circles">
+        <span class="circle one"></span>
+        <span class="circle two"></span>
+        <span class="circle three"></span>
+      </div>
+
+    </div>
+
+    <div *ngIf="isDataAvailable">
+
+      <app-whirligig
+        [projects_cda]="projects_cda">
+      </app-whirligig>
+
+      <!-- <hr>
+
+      <div *ngFor="let project of projects_cda">
+        <app-project-card [project]="project"></app-project-card>
+      </div> -->
+
+    </div>
+
+
+  </section>
+
+</article>

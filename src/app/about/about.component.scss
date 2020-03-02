@@ -1,0 +1,317 @@
+@import "../../variables.scss";
+@import "../../fontawesome.scss";
+:host {
+  display: block;
+}
+.about {
+
+  p {
+    margin: 0 auto;
+  }
+
+// intro section
+.intro {
+
+  // max-width: 800px;
+  margin: 0 auto;
+
+
+  &__headline {
+
+  }
+
+  &__signature {
+    font-family: 'Cedarville Cursive', cursive;
+    margin-top: 4em;
+  }
+  &__text {
+
+  }
+}
+
+.resume {
+  font-family: 'Nanum Myeongjo', serif;
+  // *{font-family: inherit;}
+  cursor: pointer;
+  max-width: 480px;
+
+  background-color: #fafafa;
+  box-shadow: 0 -5px 10px -5px rgba(0, 0, 0, 0.25),
+  1px 1px 0 #ccc,
+  2px 2px 0 #c9c9c9,
+  3px 3px 0 #bbb,
+  4px 4px 0 #b9b9b9,
+  5px 5px 0 #aaa,
+  6px 6px 1px rgba(0,0,0,.1),
+  1px 1px 3px rgba(0,0,0,.3),
+  3px 3px 5px rgba(0,0,0,.2),
+  5px 5px 10px rgba(0,0,0,.25),
+  10px 10px 10px rgba(0,0,0,.2),
+  20px 20px 20px rgba(0,0,0,.15);
+
+  border-right: 1px dashed #cccccc;
+  border-bottom: 1px dashed #cccccc;
+  padding: 1.5em;
+
+  font-size: 0.8em;
+  line-height: 1.5;
+  text-align: left;
+
+  margin: 0 -1em;
+
+  @media only screen and (min-width: 480px) {
+    margin: 0 auto;
+  }
+
+
+  ul {
+    li {
+
+    }
+  }
+  p {
+    margin: 0;
+  }
+
+  .experience-list {
+    li {
+      padding: 0.25em 0;
+
+    }
+  }
+
+  .list-title {
+    font-weight: bolder;
+    text-decoration: underline;
+    font-size: 1em;
+    margin: 0;
+  }
+
+  &_headline {
+
+    // text-align: right;
+    font-weight: 100;
+    color: darken($color-dark-red, 10);
+    margin: 0;
+    font-size: 2.5em;
+  }
+  &_sub-headline {
+    margin: 0.5em 0 0.1em;
+    border-bottom: 1px solid #e6e6e6;
+  }
+  &_title {
+    font-weight: bolder;
+    font-size: 1em;
+    margin: 0;
+  }
+  &_link {
+    color: #1a1a1a;
+  }
+  &_footer {
+    padding-top: 4px;
+  }
+  &_footer-link {
+    font-style: italic;
+    font-size: 1.5em;
+  }
+
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  &__link {
+
+  }
+
+  &__icon {
+
+  }
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+
+
+
+
+
+
+
+
+$duration: 450ms;
+$tileWidth: 250px;
+$tileHeight: ($tileWidth / (16/9));
+$iconSize: 50px;
+$growFactor: 1.5; // 1.5 times the original size
+
+$moveLeft: -($tileWidth * ($growFactor - 1) / 2);
+$moveRight: $tileWidth * ($growFactor - 1);
+
+// body, html
+//   padding: 0 10px
+//   margin: 0
+//   background: #0E0F11
+//   color: #ecf0f1
+//   font-family: 'Open Sans', sans-serif
+//   min-height: 100vh
+//   display: flex
+//   flex-direction: row
+//   align-items: center
+//   width: 100%
+//
+// * { box-sizing: border-box }
+//
+// h1, p
+//   text-align: center
+//
+// p
+//   width: 100%
+//   max-width: 500px
+//   margin: auto
+//
+// a:link
+// a:hover
+// a:active
+// a:visited
+//   transition: color 150ms
+//   color: #95a5a6
+//   text-decoration: none
+//
+// a:hover
+//   color: #7f8c8d
+//   text-decoration: underline
+
+.contain {
+  width: 100%;
+}
+
+.row {
+  overflow: scroll;
+  width: 100%;
+}
+
+.row__inner {
+  transition: $duration transform;
+  font-size: 0;
+  white-space: nowrap;
+  margin: ($tileHeight / 2) 0;
+  padding-bottom: 10px; // Account for OS X scroll bar
+}
+
+.tile {
+  position: relative;
+  display: inline-block;
+  width: $tileWidth;
+  height: $tileHeight;
+  margin-right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: $duration all;
+  transform-origin: center left;
+}
+
+.tile__img {
+  width: $tileWidth;
+  height: $tileHeight;
+  object-fit: cover;
+}
+.tile__details {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  font-size: 10px;
+  opacity: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+  transition: $duration opacity;
+
+  // &:after,
+  // &:before {
+  //   content: '';
+  //   position: absolute;
+  //   top: 50%;
+  //   left: 50%;
+  //   display: black;
+  // }
+  // &:after {
+  //   margin-top: (-($iconSize / 2));
+  //   margin-left: (-($iconSize / 2));
+  //   width: $iconSize;
+  //   height: $iconSize;
+  //   border: 3px solid #ecf0f1;
+  //   line-height: $iconSize;
+  //   text-align: center;
+  //   border-radius: 100%;
+  //   background: rgba(0,0,0,0.5);
+  //   z-index: 1;
+  // }
+  // &:before {
+  //   content: '▶';
+  //   left: 0;
+  //   width: 100%;
+  //   font-size: 30px;
+  //   margin-left: 7px;
+  //   margin-top: -18px;
+  //   text-align: center;
+  //   z-index: 2;
+  // }
+  .tile:hover & {
+    opacity: 1;
+  }
+}
+
+.tile__title {
+  color: white;
+  text-shadow: -1px 1px 1px black;
+  font-size: 1.2em;
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+}
+
+// *
+// * Hover effects
+// *
+
+// We assume when you hover .row, you're also hovering a .tile
+// First, move the whole row towards the left
+.row__inner:hover {
+  transform: translate3d($moveLeft, 0, 0);
+}
+
+.row__inner:hover .tile {
+
+  // Fade out every tile
+  opacity: .3;
+
+  // And then grow the current tile and make it opaque again
+  &:hover {
+    transform: scale($growFactor);
+    opacity: 1;
+  }
+}
+// And finally move all tiles right of the current tile to the right,
+// so its flush against the hovered tile
+.tile:hover ~ .tile {
+  transform: translate3d($moveRight, 0, 0);
+}

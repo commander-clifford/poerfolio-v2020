@@ -1,0 +1,63 @@
+mat-card {
+
+  mat-card-title {
+    font-size: 2em;
+    text-align: left;
+  }
+
+  mat-card-subtitle {
+    font-size: 1.2em;
+    text-align: left;
+  }
+
+  mat-card-content {
+    text-align: left;
+    margin: 0 16px;
+  }
+
+  mat-card-actions {
+    text-align: right;
+    button {
+      mat-icon {
+        transform: translate(-6px, -4px);
+        font-size: 26px;
+      }
+    }
+  }
+
+}
+
+mat-card.sideways {
+  position: relative;
+  height: 25vh;
+  width: 80%;
+  max-width: 960px;
+  margin: 4vh auto;
+  display: flex;
+  flex-direction: row;
+  padding: 2em;
+  cursor: pointer;
+
+  img {
+    max-width: 100%;
+    width: 25%;
+    height: auto;
+    margin: 0 2em 0 0;
+  }
+
+  mat-card-actions {
+    position: absolute;
+    bottom: 2em;
+    margin: 0;
+    right: 2em;
+    padding: 0;
+
+    button {
+      font-size: 2em;
+      width: 60px;
+      height: 60px;
+      line-height: 60px;
+      min-height: 60px;
+    }
+  }
+}

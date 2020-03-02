@@ -1,0 +1,25 @@
+<mat-card>
+
+  <img
+    mat-card-image
+    [src]="project.fields.hero.fields.file.url"
+    [alt]="project.fields.hero.fields.description"
+    [height]="project.fields.hero.fields.file.details.image.height"
+    [width]="project.fields.hero.fields.file.details.image.width"
+  >
+
+  <mat-card-header>
+    <mat-card-title [innerHTML]="project.fields.title"></mat-card-title>
+    <!-- <mat-card-subtitle [innerHTML]="project.fields.subtitle"></mat-card-subtitle> -->
+  </mat-card-header>
+
+  <mat-card-content [innerHTML]="project.fields.subtitle"></mat-card-content>
+
+  <mat-card-actions>
+    <button [routerLink]="'/projects/'+project.fields.slug" mat-flat-button aria-label="Explore this project">
+      More
+      <mat-icon>chevron_right</mat-icon>
+    </button>
+  </mat-card-actions>
+
+</mat-card>

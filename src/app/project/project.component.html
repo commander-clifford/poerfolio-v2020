@@ -1,0 +1,99 @@
+<article
+  class="project page"
+  >
+
+  <section class="page__section page__section--style1 page__section--flex">
+
+    <div *ngIf="!isDataAvailable" [style.width]="'100%'">
+
+      <div class="indicators-container">
+        <div class="indicators growy-three-circles">
+          <span class="circle one"></span>
+          <span class="circle two"></span>
+          <span class="circle three"></span>
+        </div>
+      </div>
+
+    </div>
+
+    <div *ngIf="isDataAvailable" style="width:100%; display: flex; justify-content: space-between;">
+
+      <div class="project__brief hero__brief">
+        <h2 class="brief__title" [innerHtml]="project.fields.title | uppercase"></h2>
+        <p class="brief__brief" [innerHtml]="project.fields.subtitle"></p>
+      </div>
+
+      <div class="project__connect">
+
+        <a
+          *ngIf="project.fields.liveUrl"
+          class="connect__link live_demo"
+          target="_blank"
+          mat-stroked-button
+          [href]="project.fields.liveUrl"
+          >
+          <i class="material-icons">open_in_new</i>
+          {{project.fields.buttonText ? project.fields.buttonText : 'live'}}
+        </a>
+
+        <a
+          *ngIf="project.fields.githubUrl"
+          class="connect__link"
+          mat-stroked-button
+          [href]="project.fields.githubUrl"
+          target="_blank"
+          >
+          <span class="social__icon icon-github"></span>
+          GitHub
+        </a>
+
+        <a
+          *ngIf="project.fields.codepenUrl"
+          class="connect__link"
+          mat-stroked-button
+          [href]="project.fields.codepenUrl"
+          target="_blank"
+          >
+          <span class="social__icon icon-codepen"></span>
+          CodePen
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <div *ngIf="isDataAvailable">
+    <section
+       *ngIf="isDataAvailable"
+       class="page__section page__section--hero page__section--style-trans">
+
+      <div class="project__hero">
+
+        <div class="">
+
+          <img *ngIf="!project.fields.liveUrl || !project.fields.showDemoOnScreen"class="hero__img" src="{{project.fields.hero.fields.file.url}}" alt="{{project.fields.hero.fields.description}}" [width]="480" [height]="400">
+
+          <iframe
+            *ngIf="project.fields.liveUrl && project.fields.showDemoOnScreen"
+            [width]="project.fields.liveHeroWidth"
+            [height]="project.fields.liveHeroHeight"
+            [src]="project.fields.liveUrl | safe: 'resourceUrl'">
+          </iframe>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <app-project-section
+      class="project__section page__section page__section--flex"
+      *ngFor="let section of project.fields.sections"
+      [section]="section"
+    >
+    </app-project-section>
+  </div>
+
+</article>

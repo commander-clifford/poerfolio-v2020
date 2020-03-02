@@ -1,0 +1,14 @@
+<ngu-carousel
+  #myCarousel
+  [inputs]="carouselTile"
+  [dataSource]="projects_cda"
+  >
+
+  <ngu-tile *nguCarouselDef="let project">
+    <app-project-card [project]="project"></app-project-card>
+  </ngu-tile>
+
+  <button NguCarouselPrev mat-icon-button class="button leftRs"><mat-icon>navigate_before</mat-icon></button>
+  <button NguCarouselNext mat-icon-button class="button rightRs"><mat-icon>navigate_next</mat-icon></button>
+
+</ngu-carousel>

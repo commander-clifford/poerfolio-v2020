@@ -1,0 +1,91 @@
+<div class="container projects">
+
+  <nav class="projects__nav">
+
+    <button
+      [routerLink]="isDataAvailable && projectPrev ? '/projects/' + projectPrev.fields.slug : '/portfolio/'"
+      class="btn btn-secondary btn-action btn-lg"
+      mat-button
+      >
+      <div class="nav__button nav__button--back">
+        <i class="material-icons icon">navigate_before</i>
+        <div>
+          <span class='nav__label'>Back</span>
+          <br>
+          <span class="nav__name" *ngIf="!isDataAvailable" [style.font-style]="'italic'">...</span>
+          <span class="nav__name" *ngIf="isDataAvailable && projectPrev" [innerHtml]="projectPrev.fields.title"></span>
+          <span class="nav__name" *ngIf="isDataAvailable && !projectPrev" [style.font-style]="'italic'">Portfolio</span>
+        </div>
+      </div>
+    </button>
+
+
+    <button
+      [routerLink]="isDataAvailable && projectNext ? '/projects/' + projectNext.fields.slug : '/portfolio/'"
+      class="btn btn-secondary btn-action btn-lg"
+      mat-button
+      >
+      <div class="nav__button nav__button--next">
+        <div>
+          <span class='nav__label'>Next</span>
+          <br>
+          <span class="nav__name" *ngIf="!isDataAvailable" [style.font-style]="'italic'">...</span>
+          <span class="nav__name" *ngIf="isDataAvailable && projectNext" [innerHtml]="projectNext.fields.title"></span>
+          <span class="nav__name" *ngIf="isDataAvailable && !projectNext" [style.font-style]="'italic'">Portfolio</span>
+        </div>
+        <i  class="material-icons icon">navigate_next</i>
+      </div>
+    </button>
+
+  </nav>
+
+  <div [@routerTransition]="getState(o)">
+    <router-outlet #o="outlet"></router-outlet>
+  </div>
+
+  <nav *ngIf="false" class="projects__nav">
+
+    <button
+      [routerLink]="isDataAvailable && projectPrev ? '/projects/' + projectPrev.fields.slug : '/portfolio/'"
+      class="btn btn-secondary btn-action btn-lg"
+      mat-button
+      >
+      <div class="nav__button nav__button--back">
+        <i class="material-icons icon">navigate_before</i>
+        <div>
+          <span class='nav__label'>Back</span>
+          <br>
+          <span class="nav__name" *ngIf="!isDataAvailable" [style.font-style]="'italic'">...</span>
+          <span class="nav__name" *ngIf="isDataAvailable && projectPrev" [innerHtml]="projectPrev.fields.title"></span>
+          <span class="nav__name" *ngIf="isDataAvailable && !projectPrev" [style.font-style]="'italic'">Portfolio</span>
+        </div>
+      </div>
+    </button>
+
+
+    <button
+      [routerLink]="isDataAvailable && projectNext ? '/projects/' + projectNext.fields.slug : '/portfolio/'"
+      class="btn btn-secondary btn-action btn-lg"
+      mat-button
+      >
+      <div class="nav__button nav__button--next">
+        <div>
+          <span class='nav__label'>Next</span>
+          <br>
+          <span class="nav__name" *ngIf="!isDataAvailable" [style.font-style]="'italic'">...</span>
+          <span class="nav__name" *ngIf="isDataAvailable && projectNext" [innerHtml]="projectNext.fields.title"></span>
+          <span class="nav__name" *ngIf="isDataAvailable && !projectNext" [style.font-style]="'italic'">Portfolio</span>
+        </div>
+        <i class="material-icons icon">navigate_next</i>
+      </div>
+    </button>
+
+  </nav>
+
+</div>
+
+<!--
+
+[@routerTransition]="routeTrigger$ | async"
+
+-->

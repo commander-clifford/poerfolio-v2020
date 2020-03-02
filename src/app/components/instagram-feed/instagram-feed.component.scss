@@ -1,0 +1,20 @@
+@import "../../../variables.scss";
+
+.instagram-feed {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-x: scroll;
+
+  &__card {
+    display: block;
+    border-right: 1px solid $color-dark-white;
+
+    img {
+      display: block;
+      max-width: unset;
+      width: 150px;
+      height: 150px;
+    }
+  }
+}

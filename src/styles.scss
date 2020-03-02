@@ -1,4 +1,255 @@
 /* You can add global styles to this file, and also import other style files */
+@import "variables.scss";
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', serif;
+  font-weight: 300;
+  background: $color-dark-red;
+  background-attachment: fixed;
+  background-image:
+    linear-gradient(217deg, rgba($color-dark-red, 1), rgba($color-dark-red, 0.0) 77%),
+    linear-gradient(127deg, rgba($color-red, 1), rgba($color-red, 0.0) 77%),
+    linear-gradient(336deg, rgba($color-light-red, 1), rgba($color-light-red, 0.0) 77%);
+
+  font-size: 16px;
+
+  @include xxl {
+    font-size: 18px;
+  }
+
+  * {font-family: 'Raleway', serif;}
+
+  h1, h2, h3, h4, h5, h6, mat-card-title {
+    font-family: 'Teko', sans-serif;
+    text-transform: uppercase;
+    font-weight: 100;
+  }
+
+  p {
+    line-height: 1.5;
+    font-size: 1.2em;
+
+    @include lg {
+      font-size: 1.1em;
+    }
+  }
+
+  iframe {
+    border: none;
+    max-width: 100%;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .img-fluid {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .material-icons {
+    font-size: 1.2em;
+  }
+  .mat-drawer-container {
+    background-color: transparent;
+  }
+
+  // Common Page Styles
+  .page {
+
+    overflow-x: hidden;
+    margin: 0;
+    width: 100%;
+
+    &__section {
+      text-align: center;
+      position: relative;
+      background-image:
+        radial-gradient(
+          $color-dark-white,
+          transparent
+        );
+
+      padding: 2em;
+      @include sm { padding: 4em; }
+      @include md { padding: 4em 8vw; }
+      @include lg { padding: 4em 16vw; }
+
+      &--full-width {
+        padding: 0;
+        @include sm {
+          padding: 1em;
+        }
+        @include md {
+          padding: 2em;
+        }
+        @include lg {
+          padding: 3em;
+        }
+        @include xl {
+          padding: 4em;
+        }
+      }
+
+      &:nth-of-type(odd) {
+        background-image:
+          radial-gradient(
+            $color-white,
+            $color-dark-white
+          );
+      }
+
+      &:nth-of-type(even) {
+        background-image:
+          radial-gradient(
+            lighten($color-dark-white, 8%),
+            darken($color-dark-white,4%)
+          );
+      }
+
+      &--hero {
+        padding: 0.5em;
+        @include md {
+          padding: 4em 20vw;
+        }
+      }
+
+      &--flex {
+        display: block;
+        @include md {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        div:last-of-type {}
+
+      }
+
+      &--style-trans {
+        background: transparent !important;
+      }
+      &--style-grad {
+        // background:
+        //   linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+        //   linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+        //   linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%) !important;
+
+        // background:
+          // linear-gradient(217deg, rgba(#D90404, 0.8), rgba(#D90404, 0.0) 77%),
+          // linear-gradient(217deg, rgba(#FFB548, 0.77), rgba(#FFB548, 0.0) 77%),
+          // linear-gradient(127deg, rgba($color-red, 0.97), rgba($color-red, 0.0) 77%),
+          // linear-gradient(336deg, rgba(yellow, 0.77), rgba(yellow, 0.0) 77%) !important;
+
+        background:
+        //   // linear-gradient(217deg, rgba(#D90404, 0.8), rgba(#D90404, 0.0) 77%),
+          linear-gradient(217deg, rgba($color-red, 0.57), rgba($color-red, 0.0) 77%),
+          linear-gradient(127deg, rgba($color-dark-red, 0.77), rgba($color-dark-red, 0.0) 77%),
+          linear-gradient(336deg, rgba($color-red, 1), rgba($color-red, 0.0) 77%) !important;
+      }
+      &--wa {
+        padding-top: 6em;
+      }
+
+      .actions {
+        position: absolute;
+        top: 0;
+        width: calc(100% - 2em);
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        padding: 1em;
+        .action__link { color: rgba(0,0,0,.87) }
+      }
+
+      hr {
+        margin: 2em;
+      }
+    }
+    &__headline {
+      font-size: 2.4em;
+      margin-bottom: 1em;
+    }
+  }
+
+  .mat-content {
+    display: block;
+    flex-direction: column;
+  }
+
+  .mat-expansion-panel-content {
+    font-weight: 300;
+    line-height: 1.8;
+  }
+
+  .action{
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 2em;
+
+    &--top {
+      padding: 0 1em;
+    }
+
+    &__link {
+      border-color: transparent !important;
+      color: $color-white;
+      font-family: 'VT323', monospace;
+      font-size: 1.2em;
+    }
+  }
+
+  .text {
+    &--fineprint {
+      font-style: italic;
+      font-size: 0.8em;
+    }
+  }
+
+  .flex {
+
+    &.space-between {
+      justify-content: space-between;
+    }
+
+    @include xl {
+      display: flex;
+      justify-content: space-between;
+      // align-items: baseline;
+    }
+
+    .left {
+      margin-bottom: 4em;
+      @include xl {
+        width: 50%;
+      }
+
+    }
+    .right {
+
+      @include xl {
+        margin-bottom: 0;
+        width: 46%;
+      }
+
+    }
+
+  }
+
+  @media only screen and (max-width: 399px) {
+    .hidden-small { display: none;}
+  }
+
+}
+
+img {
+  // max-width: 100%;
+  height: auto;
+}

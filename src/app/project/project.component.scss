@@ -1,0 +1,238 @@
+@import "../../variables.scss";
+@import "../../fontawesome.scss";
+
+.project {
+
+  p,ul { text-align: left; }
+
+  &__brief {
+    text-align: left !important;
+    // float: left;
+    max-width: 680px;
+
+    .brief {
+      &__title {
+        font-size: 2em;
+        line-height: 1;
+        @include md {
+          font-size: 4em;
+        }
+        @include lg {
+          font-size: 4em;
+        }
+      }
+      &__client {}
+      &__role {}
+      &__brief {
+        font-family: 'Teko', sans-serif;
+        font-size: 1.4em;
+        @include md {
+          font-size: 2em;
+        }
+        @include lg {
+          font-size: 2em;
+        }
+      }
+    }
+  }
+
+  &__connect {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    .connect {
+      &__link {
+        border-radius: 20px;
+        margin-left: 1em;
+      }
+    }
+  }
+
+  &__hero {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 0.5em;
+    @include md {
+      padding: 1em;
+    }
+
+    border-radius: 0.5em;
+    background-image:
+      radial-gradient(
+        $color-white,
+        $color-dark-white
+      );
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .supporting {
+
+    &__images {
+
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      @include lg {
+        flex-direction: column;
+      }
+
+
+      img {
+        width: 15%;
+        max-height: 320px;
+        @include lg {
+          width: auto;
+          margin-bottom: 1em;
+        }
+      }
+
+    }
+  }
+
+  .details {
+    padding-top: 4em;
+    padding-bottom: 4em;
+    p {}
+  }
+
+
+  // &__title {
+  //   margin-bottom: 0;
+  //   @include md {
+  //     font-size: 4vw;
+  //   }
+  //   @include lg {
+  //     font-size: 4vw;
+  //   }
+  // }
+
+  &__cr {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+  }
+  // &__client,
+  // &__role {
+  //   margin: 0;
+  //
+  //   @include md {
+  //     font-size: 1vw;
+  //   }
+  //   @include lg {
+  //     font-size: 1.1vw;
+  //   }
+  // }
+
+  // &__elaborate,
+  // &__brief {
+  //   @include md {
+  //     font-size: 1.1vw;
+  //   }
+  //   @include lg {
+  //     font-size: 1.2vw;
+  //   }
+  // }
+
+
+}
+
+.actions {
+  position: relative;
+
+  z-index: 9;
+  top: 0;
+  width: calc(100% - 2em);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1em;
+
+  @media only screen and (min-width: 680px) {
+    position: absolute;
+  }
+
+
+
+
+  .action__link {
+    margin-left: 1em;
+    color: rgba(0,0,0,.87)
+  }
+}
+
+.live_demo,
+.visit_link {
+  // box-sizing: border-box;
+  // padding: 1em;
+  // background-image:
+  //   radial-gradient(
+  //     $color-red,
+  //     $color-dark-red
+  //   );
+  // color: white;
+}
+
+.visit_link {
+  margin: 0 auto 0;
+}
+
+
+.indicators-container {
+  position: relative;
+  margin: 0 auto;
+  height: 60vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .indicators {
+    width: 96px;
+    height: 96px;
+    position: relative;
+  }
+}
+
+.growy-three-circles {
+  .circle {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    transform: scale(0.8);
+    background-color: $color-primary;
+    &.one {
+      top: calc(50% - 8px);
+      left: calc(50% - 32px);
+      animation: pulse 400ms ease-in-out 0ms infinite alternate both;
+    }
+    &.two {
+      top: calc(50% - 8px);
+      left: calc(50% - 8px);
+      animation: pulse 400ms ease-in-out 200ms infinite alternate both;
+    }
+    &.three {
+      top: calc(50% - 8px);
+      left: calc(50% + 16px);
+      animation: pulse 400ms ease-in-out 400ms infinite alternate both;
+    }
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    background-color: $color-primary;
+  }
+  100% {
+    transform: scale(0.8);
+    background-color: $color-light-red;
+  }
+}

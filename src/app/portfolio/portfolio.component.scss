@@ -1,0 +1,62 @@
+@import "../../variables.scss";
+
+.portfolio {
+
+  &__list {
+    margin: 0 auto;
+    max-width: 960px;
+  }
+
+  &__tile {
+    cursor: pointer;
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+  }
+
+  &__img {}
+
+  .indicators-container {
+    position: relative;
+    margin: 0 auto;
+    height: 60vh;
+  }
+
+  .growy-three-circles {
+    .circle {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      transform: scale(0.8);
+      background-color: $color-primary;
+      &.one {
+        top: calc(50% - 8px);
+        left: calc(50% - 32px);
+        animation: pulse 400ms ease-in-out 0ms infinite alternate both;
+      }
+      &.two {
+        top: calc(50% - 8px);
+        left: calc(50% - 8px);
+        animation: pulse 400ms ease-in-out 200ms infinite alternate both;
+      }
+      &.three {
+        top: calc(50% - 8px);
+        left: calc(50% + 16px);
+        animation: pulse 400ms ease-in-out 400ms infinite alternate both;
+      }
+    }
+  }
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      background-color: $color-primary;
+    }
+    100% {
+      transform: scale(0.8);
+      background-color: $color-light-red;
+    }
+  }
+
+}
