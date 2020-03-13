@@ -1,5 +1,26 @@
 @import "../../variables.scss";
 @import "../../fontawesome.scss";
+
+.list {
+  &--flat {
+    display: flex;
+    padding: 0;
+    list-style: none;
+    font-size: 0.9em;
+    margin-top: 0.2em;
+    font-style: italic;
+
+    > li {
+      margin-right: 0.5em;
+      border-right: 1px solid gray;
+      padding-right: 0.5em;
+      &:last-of-type {
+        border: none;
+      }
+    }
+  }
+}
+
 :host {
   display: block;
 }
@@ -74,9 +95,8 @@
   }
 
   .experience-list {
-    li {
+    &__item {
       padding: 0.25em 0;
-
     }
   }
 
