@@ -16,6 +16,21 @@ export const POSITIONS: any[] = [
   // },
 
   {
+    id: 10,
+    title: "Design Prototyper",
+    date: "2019-2020",
+    employer: "Netflix",
+    employerSecondary: "First Professional Services",
+    jobDesc: "Using web technologies to create hi-fidelity prototypes to simulate multiple environments for user testing, research and design feasibility. Contributing to core design systems and audience growth. Platform include but not limited to TV, web and mobile.",
+    list: [
+      "React, Redux, GSAP, PIXI",
+      "Create prototypes to quickly exploring design concepts",
+      "Motion Design, Game Design, UX Design",
+      "Environments are ad-hoc, typically create-react-app plus internal design systems",
+    ],
+    tags: null,
+  },
+  {
     id: 9,
     title: "Creative Technologist / Prototyper",
     date: "2018-Present",
@@ -24,7 +39,7 @@ export const POSITIONS: any[] = [
     jobDesc: "Contribute to the 10 year vision of Google’s personality and brand. Generate prototypes to rapidly iterate through ideas in low to high-fidelity. Game design prototyping. Homepage prototyping for Doodles.",
     list: [
       "Contribute to Doodle team when available",
-      "Create prototypes to quickly exploring ideas",
+      "Create prototypes to quickly exploring Doodle and game concepts",
       "Motion Design, Game Design, UX Design",
       "Environments are ad-hoc, typically newest Angular + Material",
     ],

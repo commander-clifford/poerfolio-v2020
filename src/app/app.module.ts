@@ -25,6 +25,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatGridListModule} from '@angular/material/grid-list';
 
@@ -50,6 +51,9 @@ import { SanitizeHtmlPipe } from './sanitize-html.pipe';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { InstagramFeedComponent } from './components/instagram-feed/instagram-feed.component';
+
+// import { NgGxSplitTextModule } from 'ng-gx-split-text';
+
 
 @NgModule({
   declarations: [
@@ -93,9 +97,11 @@ import { InstagramFeedComponent } from './components/instagram-feed/instagram-fe
     MatRadioModule,
     MatSidenavModule,
     MatToolbarModule,
+    MatTooltipModule,
     MatExpansionModule,
     MatGridListModule,
     NguCarouselModule,
+    // NgGxSplitTextModule,
     OrderModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],

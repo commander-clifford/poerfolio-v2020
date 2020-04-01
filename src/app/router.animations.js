@@ -5,7 +5,7 @@ import { query } from './router.animationsQuery.js';
 
 export const routerTransition = trigger('routerTransition', [
 
-  transition('home => resume', [
+  transition('xhome => xresume', [
     query(':enter', style({ position: 'fixed', width:'100%', left: 0, right: 0, }),{ optional: true }),
     query(':leave', style({ position: 'fixed', width:'100%', left: 0, right: 0, }),{ optional: true }),
     group([
@@ -20,7 +20,7 @@ export const routerTransition = trigger('routerTransition', [
     ])
   ]),
 
-  transition('* => home', [
+  transition('* => xhome', [
 
       group([
         // query(':leave', style({ position: 'fixed', width:'100%' }),{ optional: true }),

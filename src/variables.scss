@@ -16,8 +16,14 @@ $color-white: #FFFFFF;
 $color-light-white: lighten($color-white,15%);
 $color-dark-white: darken($color-white,15%);
 
+$color-gray-0: #1a1a1a;
+
+$font-body: 'Montserrat', sans-serif;
+$font-display: 'Arvo', serif;
+
 // assignments
 $color-primary: $color-red;
+$color-body-color: $color-gray-0;
 
 $screen-sm-min: 480px;
 $screen-md-min: 720px;

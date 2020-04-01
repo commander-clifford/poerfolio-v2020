@@ -1,29 +1,77 @@
 <article id="about" class="about page">
 
-  <section class="page__section">
+  <!-- <section class="page__section">
     <div class="page__wrapper">
 
     </div>
     <div class="intro">
       <div class="intro__text">
 
-        <h2 class="page__headline">Hi! I'm Clifford</h2>
+        <div class="">
+          <p>Hi! I'm </p>
+          <h2 class="page__headline">Clifford Ryan Nelson</h2>
+        </div>
+
 
         <p>I am a creative technologist, experience designer and a visionary.</p>
 
       </div>
     </div>
-  </section>
+  </section> -->
 
-  <app-instagram-feed sort="most-liked"></app-instagram-feed>
+  <!-- <app-instagram-feed sort="most-recent"></app-instagram-feed> -->
 
+  <!-- portfolio -->
   <section class="page__section">
     <div class="page__wrapper">
+      <h2 class="page__headline">Projects</h2>
+      <i>this section is set for demolition and re-construction</i>
+      <app-whirligig
+        [projects_cda]="projects_cda">
+      </app-whirligig>
+
+      <div *ngIf="false"  class="contain">
+
+        <div class="row">
+          <div class="row__inner">
+
+            <div class="tile" style="width: 60px;"></div>
+
+            <div
+              *ngFor="let project of projects | orderBy: 'id':true"
+              class="tile"
+              (click)="this.router.navigate(['/projects/'+project.id])"
+            >
+              <div class="tile__media">
+                <img class="tile__img" [src]="project.thumbnail.url" />
+              </div>
+              <div class="tile__details">
+                <div
+                  class="tile__title"
+                  [innerHtml]="project.name"
+                  >
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- about me -->
+  <section class="page__section">
+    <div class="page__wrapper">
+      <h2 class="page__headline">About Me</h2>
       <div class="flex">
+
         <div class="left">
 
           <p>I’ve been working with digital media for over 10 years and have a passion for user centered design & innovation. My enthusiasm for design is the interaction and the connection made between the user and the solution. A background in design and engineering have me think with an artistic and scientific mindset, bringing a unique perspective&nbsp;to&nbsp;the table.</p>
-
+          <p>I’ve been working with digital media for over 10 years and have a passion for design & innovation with the user at the center of everything. I can communicate concepts by rapidly prototyping delightful and engaging experiences, utilizing front-end technologies for high-fidelity and production ready results. I can also work independently on multiple projects, and incorporate feedback from team members across an organization.</p>
           <p>I've studied engineering, psychology and design. In 2014 I graduated with a Bachelors Degree in Web Design with a 4.0 GPA as Valedictorian. Today, my favorite exercise is collaborating with team members to design and build game changing experiences from the&nbsp;ground&nbsp;up.</p>
 
           <hr>
@@ -40,117 +88,121 @@
 
 
         </div>
+
         <div class="right">
 
           <div
             id="resume"
             class="resume"
             (click)="router.navigate(['/resume/'])"
-            matTooltip="Open Resume Page"
             >
 
-            <h1 class="resume_headline">Clifford Ryan Nelson</h1>
+            <div class="resume__blur">
 
-            <!-- -_-_-_-_-_-_-_-_-_-_-_-_-_-_- -->
+                <h1 class="resume_headline">Clifford Ryan Nelson</h1>
 
-            <h2 class="resume_sub-headline">Education</h2>
+                <!-- -_-_-_-_-_-_-_-_-_-_-_-_-_-_- -->
 
-            <p class="resume_title"><span class="title">Platt College San Diego</span><br> Bachelors&nbsp;of&nbsp;Science&nbsp;in&nbsp;Media&nbsp;Arts - 2014</p>
-            <ul class="un-list">
-              <li><span class="list-title">GPA:</span> 4.0, Class Valedictorian</li>
-              <li><span class="list-title">Relevant Coursework:</span> Fundamentals of Web Design, Web Campaign Implementation, Design for Usability, Responsive Web Design, Programming for Designers, Scripting for the Web, Content Management Systems</li>
-            </ul>
+                <h2 class="resume_sub-headline">Education</h2>
 
-            <!-- -_-_-_-_-_-_-_-_-_-_-_-_-_-_- -->
-
-            <h2 class="resume_sub-headline">Technical</h2>
-
-            <ul class="un-list">
-              <li><span class="list-title">Design Canvas:</span> Angular + Material + (GSAP, threeJS, box2D)</li>
-              <li><span class="list-title">Languages &amp; Frameworks:</span> HTML, CSS (LESS/SASS), JavaScript, jQuery, React, Angular, JSON, PHP, MySQL</li>
-              <li><span class="list-title">Keywords:</span>Web Design, Web Development, Responsive Wed Design, HTML5, CSS3 (LESS/SCSS), JavaScript, JSON, TypeScript, ES6, jQuery, NPM, GSAP, PIXI, Box2D, Planck, three.js, canvas, Angular, Material, Bootstrap, Grunt/Gulp, PHP, Git, UI/UX Prototyping, Adobe Creative Suite, CLI</li>
-
-            </ul>
-
-            <!-- -_-_-_-_-_-_-_-_-_-_-_-_-_-_- -->
-
-            <h2 class="resume_sub-headline">Recent Positions</h2>
-
-            <ul class="un-list experience-list">
-
-
-              <li class="experience-list__item">
-                <span class="list-title">Design Prototyper @ Netflix [First Professional Services]</span><span class="text-right"></span>
-                <p>
-                  Using web technologies to create hi-fidelity prototypes to simulate multiple environments for user testing, research and design feasibility. Contributing to core design systems and audience growth. Platform include but not limited to TV, web and mobile.
-                </p>
-                <ul class="list--flat">
-                  <li>React</li>
-                  <li>Redux</li>
-                  <li>GSAP</li>
-                  <li>PIXI</li>
-                  <li>HTML</li>
-                  <li>CSS/SCSS</li>
-                </ul>
-              </li>
-
-              <li class="experience-list__item">
-                <span class="list-title">Creative Technologist / Prototyper @ Google [Synergis]</span><span class="text-right"></span>
-                <p>
-                  Used web technologies to create hi-fidelity prototypes for the Doodle team. Created simulated environments to test ideas and games. Contributed to the 10 year vision of Google’s personality and brand. Generated prototypes to rapidly iterate through ideas in low to high-fidelity. Game design prototyping. Homepage prototyping for Doodles.
-                </p>
-                <ul class="list--flat">
-                  <li>Angular</li>
-                  <li>GSAP</li>
-                  <li>Material</li>
-                  <li>Box2D</li>
+                <p class="resume_title"><span class="title">Platt College San Diego</span><br> Bachelors&nbsp;of&nbsp;Science&nbsp;in&nbsp;Media&nbsp;Arts - 2014</p>
+                <ul class="un-list">
+                  <li><span class="list-title">GPA:</span> 4.0, Class Valedictorian</li>
+                  <li><span class="list-title">Relevant Coursework:</span> Fundamentals of Web Design, Web Campaign Implementation, Design for Usability, Responsive Web Design, Programming for Designers, Scripting for the Web, Content Management Systems</li>
                 </ul>
 
-                <!-- <ul>
-                  <li>Contribute to Doodle team</li>
-                  <li>Create prototypes to quickly exploring ideas</li>
-                  <li>Motion Design, Game Design, UX Design</li>
-                  <li>Environments are ad-hoc, typically newest Angular + Material</li>
-                </ul> -->
-              </li>
+                <!-- -_-_-_-_-_-_-_-_-_-_-_-_-_-_- -->
 
-              <li class="experience-list__item">
-                <span class="list-title">Design Engineer, 2017–2018 @ Uber [TekSystems]</span><span class="text-right"></span>
-                <p>Collaborate closely with Design team to deliver engaging experiences using the latest in front-end
-                technologies like React. Responsible for customer facing efforts such as the blog, about and FAQ pages. Design
-                and build internal tools to make tedious and/or difficult tasks easy and efficient for non-technical content
-                providers.</p>
-                <ul class="list--flat">
-                  <li>React</li>
-                  <li>HTML/SCSS/JS</li>
-                  <li>Canvas</li>
-                  <li>CMS</li>
+                <h2 class="resume_sub-headline">Technical</h2>
+
+                <ul class="un-list">
+                  <li><span class="list-title">Design Canvas:</span> Angular + Material + (GSAP, threeJS, box2D)</li>
+                  <li><span class="list-title">Languages &amp; Frameworks:</span> HTML, CSS (LESS/SASS), JavaScript, jQuery, React, Angular, JSON, PHP, MySQL</li>
+                  <li><span class="list-title">Keywords:</span>Web Design, Web Development, Responsive Wed Design, HTML5, CSS3 (LESS/SCSS), JavaScript, JSON, TypeScript, ES6, jQuery, NPM, GSAP, PIXI, Box2D, Planck, three.js, canvas, Angular, Material, Bootstrap, Grunt/Gulp, PHP, Git, UI/UX Prototyping, Adobe Creative Suite, CLI</li>
+
                 </ul>
-                <!-- <ul>
-                  <li>Environment:</li>
-                  <li>Build internal tools to aid marketing efforts</li>
-                  <li>Integrate with Contentful CMS</li>
-                </ul> -->
-              </li>
 
-            </ul>
+                <!-- -_-_-_-_-_-_-_-_-_-_-_-_-_-_- -->
+
+                <h2 class="resume_sub-headline">Recent Positions</h2>
+
+                <ul class="un-list experience-list">
+
+
+                  <li class="experience-list__item">
+                    <span class="list-title">Design Prototyper @ Netflix [First Professional Services]</span><span class="text-right"></span>
+                    <p>
+                      Using web technologies to create hi-fidelity prototypes to simulate multiple environments for user testing, research and design feasibility. Contributing to core design systems and audience growth. Platform include but not limited to TV, web and mobile.
+                    </p>
+                    <ul class="list--flat">
+                      <li>React</li>
+                      <li>Redux</li>
+                      <li>GSAP</li>
+                      <li>PIXI</li>
+                      <li>HTML</li>
+                      <li>CSS/SCSS</li>
+                    </ul>
+                  </li>
+
+                  <li class="experience-list__item">
+                    <span class="list-title">Creative Technologist / Prototyper @ Google [Synergis]</span><span class="text-right"></span>
+                    <p>
+                      Used web technologies to create hi-fidelity prototypes for the Doodle team. Created simulated environments to test ideas and games. Contributed to the 10 year vision of Google’s personality and brand. Generated prototypes to rapidly iterate through ideas in low to high-fidelity. Game design prototyping. Homepage prototyping for Doodles.
+                    </p>
+                    <ul class="list--flat">
+                      <li>Angular</li>
+                      <li>GSAP</li>
+                      <li>Material</li>
+                      <li>Box2D</li>
+                    </ul>
+
+                    <!-- <ul>
+                      <li>Contribute to Doodle team</li>
+                      <li>Create prototypes to quickly exploring ideas</li>
+                      <li>Motion Design, Game Design, UX Design</li>
+                      <li>Environments are ad-hoc, typically newest Angular + Material</li>
+                    </ul> -->
+                  </li>
+
+                  <!-- <li class="experience-list__item">
+                    <span class="list-title">Design Engineer, 2017–2018 @ Uber [TekSystems]</span><span class="text-right"></span>
+                    <p>Collaborate closely with Design team to deliver engaging experiences using the latest in front-end
+                    technologies like React. Responsible for customer facing efforts such as the blog, about and FAQ pages. Design
+                    and build internal tools to make tedious and/or difficult tasks easy and efficient for non-technical content
+                    providers.</p>
+                    <ul class="list--flat">
+                      <li>React</li>
+                      <li>HTML/SCSS/JS</li>
+                      <li>Canvas</li>
+                      <li>CMS</li>
+                    </ul>
+                    <ul>
+                      <li>Environment:</li>
+                      <li>Build internal tools to aid marketing efforts</li>
+                      <li>Integrate with Contentful CMS</li>
+                    </ul>
+                  </li> -->
+
+                </ul>
+
+            </div>
+            <!-- <br/>
+            <div class="">
+                <a
+                  href="./assets/clifford_nelson_resume.pdf"
+                  class="social__link"
+                  target="_blank"
+                  mat-button
+                  color="secondary">
+                  <span class="social__icon icon-resume"></span>
+                  Download the full resume.pdf
+
+                </a>
+            </div> -->
 
           </div>
-          <br/>
-          <div class="">
-            <a
-              href="./assets/clifford_nelson_resume.pdf"
-              class="social__link"
-              target="_blank"
-              mat-button
-              color="secondary">
-              <span class="social__icon icon-resume"></span>
-              Download the full resume.pdf
-
-            </a>
-          </div>
-
         </div>
+
       </div>
     </div>
   </section>
@@ -160,31 +212,29 @@
       <div class="intro">
         <h2 class="page__headline">My Past</h2>
 
-        <p>I started my career with a tour in the Navy where I studied electronics engineering. During my enlistment I learned a lot about electronics, complex systems, and camaraderie. I later received an honorable discharge from the Navy. I joined a Department of Defense Contractor shortly after. There I worked on the Navy's shipboard CCTV systems as the lead engineer for the prototyping and build of the next generation broadcast studio system for larger Navy vessels.</p>
+        <p>I started my career with a tour in the Navy where I studied electronics engineering. During my enlistment I learned a lot about electronics, complex systems, and team work. I later received an honorable discharge from the Navy. Shortly after, I joined a Department of Defense Contractor. There I worked on the Navy's shipboard CCTV systems as the lead engineer for prototyping and building the next generation of broadcast studio systems for larger Navy vessels.</p>
 
-        <p>This was a great career, but I knew I wanted more. So I decided to go back to school. After a few years as a full time student, while still working, I earned a degree in Media Design as the Valedictorian of my class.</p>
+        <p>This was a great career, but I knew I wanted more. So I decided to go back to school. After a few years as a full time student, while still working, I earned a degree in Web Design as the Valedictorian of my class.</p>
 
       </div>
     </div>
   </section>
 
-  <app-instagram-feed sort="most-recent"></app-instagram-feed>
-
   <section class="page__section">
     <div class="page__wrapper">
       <h2 class="page__headline">Right Now</h2>
 
-      <div class="flex">
+      <!-- <div class="flex"> -->
 
-        <div class="left">
-          <p>I've been contracting with some of the best companies in the world. I really appreciate the opportunity I have had to see the industry from many different perspectives. I have done a lot of contract work, but I will ultimately be in search of a long term platform to focus my efforts on. One where I can contribute while also mentoring junior technologists.</p>
+        <!-- <div class=""> -->
+          <p>I've been contracting with some of the best companies in the world. I really appreciate the opportunity I've had to see the industry from many different perspectives. I have done a lot of contract work, but I will ultimately be in search of a long term platform to focus my efforts on. One where I can contribute while also mentoring junior technologists.</p>
           <hr>
           <p>Part designer, part developer, all of the above. From production development to designing with code, I can do it all.</p>
-        </div>
+        <!-- </div> -->
 
-        <div class="right">
+        <!-- <div class="right"> -->
           <!-- <p>Professional points:</p> -->
-          <p>
+          <!-- <p>
             <mat-accordion>
 
             <mat-expansion-panel>
@@ -231,52 +281,16 @@
             </mat-expansion-panel>
 
             </mat-accordion>
-          </p>
-        </div>
+          </p> -->
+        <!-- </div> -->
 
-      </div>
+      <!-- </div> -->
     </div>
   </section>
 
-  <section class="page__section">
-    <div class="page__wrapper">
-      <h2 class="page__headline">Portfolio</h2>
-
-      <app-whirligig
-        [projects_cda]="projects_cda">
-      </app-whirligig>
-
-      <div *ngIf="false"  class="contain">
-
-        <div class="row">
-          <div class="row__inner">
-
-            <div class="tile" style="width: 60px;"></div>
-
-            <div
-              *ngFor="let project of projects | orderBy: 'id':true"
-              class="tile"
-              (click)="this.router.navigate(['/projects/'+project.id])"
-            >
-              <div class="tile__media">
-                <img class="tile__img" [src]="project.thumbnail.url" />
-              </div>
-              <div class="tile__details">
-                <div
-                  class="tile__title"
-                  [innerHtml]="project.name"
-                  >
-                </div>
-              </div>
-            </div>
 
 
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
+  <app-instagram-feed sort="most-liked"></app-instagram-feed>
 
   <app-footer></app-footer>
 
