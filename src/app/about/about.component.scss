@@ -382,3 +382,9 @@ $moveRight: $tileWidth * ($growFactor - 1);
 .tile:hover ~ .tile {
   transform: translate3d($moveRight, 0, 0);
 }
+
+.project-item__actions {
+  margin-top: 4em;
+  // display: flex;
+  // justify-content: flex-end;
+}

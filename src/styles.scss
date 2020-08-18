@@ -89,6 +89,14 @@ body {
       }
     }
   }
+  .resume {
+    .page__section {
+      padding: 4em 4em;
+      @include md {
+        padding: 4em 13em;
+      }
+    }
+  }
   .page {
 
     overflow-x: hidden;
@@ -307,7 +315,7 @@ body {
 }
 
 img {
-  // max-width: 100%;
+  max-width: 100%;
   height: auto;
 }
 
@@ -317,3 +325,9 @@ img {
 .SplitTextJS-char {
   position: relative;
 }
+
+
+.mat-raised-button {
+    background-color: #a00023;
+    color: white;
+  }

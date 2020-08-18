@@ -33,7 +33,7 @@ export class AboutComponent implements OnInit {
     // this.projects = this.projectService.getProjects();
 
     // the contenful way
-    this.contentfulApiService.getProjects()
+    this.contentfulApiService.getTopProjects()
       .then(projects_cda => this.projects_cda = projects_cda)
       .then(projects_cda => console.log('Portfolio pieces',projects_cda));
 

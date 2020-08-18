@@ -15,9 +15,10 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 
   { path: 'home', component: HomeComponent, data: { state: 'home' } },
-  { path: 'about', component: AboutComponent, data: { state: 'about' } },
+  // { path: 'about', component: AboutComponent, data: { state: 'about' } },
   { path: 'resume', component: ResumeComponent, data: { state: 'resume' } },
   { path: 'portfolio', component: PortfolioComponent, data: { state: 'portfolio' } },
+  
   { path: 'projects', component: ProjectsComponent, data: { state: 'projects' },
       children: [
         { path: '', redirectTo: '/', pathMatch: 'full'},

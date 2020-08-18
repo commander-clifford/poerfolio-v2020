@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Project } from '../project/project';
 import { ProjectService } from '../project/project.service';
 import { OrderPipe } from 'ngx-order-pipe';
@@ -19,6 +21,9 @@ export class PortfolioComponent implements OnInit { 
   public isDataAvailable: boolean = false;
 
   constructor(
+    public route: ActivatedRoute,
+    public location: Location,
+    public router: Router,
     private projectService: ProjectService,
     private contentfulApiService: ContenfulApiService,
   ) {
@@ -33,7 +38,7 @@ export class PortfolioComponent implements OnInit { 
     this.projects = this.projectService.getProjects();
 
     // the contenful way
-    this.contentfulApiService.getProjects()
+    this.contentfulApiService.getAllProjects()
       .then(projects_cda => this.projects_cda = projects_cda)
       .then(projects_cda => console.log('Portfolio pieces',projects_cda))
       .then(() => this.loadPage());

@@ -28,16 +28,25 @@ export class ContenfulApiService {
     return this.cdaClient.getEntries(Object.assign({
       content_type: 'blogPost',
       // order: '-fields.displayOrder',
-      limit: 10,
+      limit: 4,
     }, query))
     .then(response => response.items);
   }
 
-  public getProjects(query?: object): Promise<Entry<any>[]> {
+  public getTopProjects(query?: object): Promise<Entry<any>[]> {
     return this.cdaClient.getEntries(Object.assign({
       content_type: 'project',
       order: '-fields.displayOrder',
-      limit: 10,
+      limit: 4,
+    }, query))
+    .then(response => response.items);
+  }
+
+  public getAllProjects(query?: object): Promise<Entry<any>[]> {
+    return this.cdaClient.getEntries(Object.assign({
+      content_type: 'project',
+      order: '-fields.displayOrder',
+      // limit: 4,
     }, query))
     .then(response => response.items);
   }

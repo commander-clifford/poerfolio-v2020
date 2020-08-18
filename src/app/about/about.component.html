@@ -250,49 +250,45 @@
   <!-- PROJECTS -->
   <section class="page__section">
     <div class="page__wrapper">
-      <h2 class="page__headline">Projects</h2>
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+
+        <h2 class="page__headline">My Favorite Projects</h2>
+        <button mat-button (click)="this.router.navigate(['/portfolio/'])" style="height: 36px">See all my projects</button>
+
+      </div>
+    </div>
+  </section>
 
       <!-- <app-whirligig
         [projects_cda]="projects_cda">
       </app-whirligig> -->
 
-      <div *ngIf="true"  class="contain">
-
-        <div class="row">
-          <div class="row__inner">
-
-            <div class="tile" style="width: 60px;"></div>
-
-            <div
-              *ngFor="let project of projects_cda"
-              class="tile"
-              (click)="this.router.navigate(['/projects/'+project.fields.slug])"
-            >
-              <div class="tile__media">
-                <img
-                  mat-card-image
-                  [src]="project.fields.hero.fields.file.url"
-                  [alt]="project.fields.hero.fields.description"
-                  [height]="project.fields.hero.fields.file.details.image.height"
-                  [width]="project.fields.hero.fields.file.details.image.width"
-                >
-              </div>
-              <div class="tile__details">
-                <div
-                  class="tile__title"
-                  [innerHtml]="project.fields.title"
-                  >
-                </div>
-
-              </div>
-            </div>
 
 
-          </div>
+  <section class="page__section" *ngFor="let project of projects_cda" (click)="this.router.navigate(['/projects/'+project.fields.slug])">
+
+    <div class="project-item flex page__wrapper">
+
+      <div class="project-item__content left">
+        <h2 [innerHtml]="project.fields.title"></h2>
+        <p [innerHtml]="project.fields.subtitle"></p>
+
+        <div class="project-item__actions">
+          <button mat-raised-button>Check it out</button>
         </div>
 
       </div>
+      <div class="project-item__hero-img right">
+        <img
+        mat-card-image
+        [src]="project.fields.hero.fields.file.url"
+        [alt]="project.fields.hero.fields.description"
+        [height]="project.fields.hero.fields.file.details.image.height"
+        [width]="project.fields.hero.fields.file.details.image.width"
+        >
+      </div>
     </div>
+
   </section>
 
   <app-footer></app-footer>

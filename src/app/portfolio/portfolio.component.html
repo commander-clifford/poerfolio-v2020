@@ -1,8 +1,8 @@
 <article class="portfolio page">
 
-  <section class="page__section page__section--full-width" style="min-height: 60vh;">
+  <section *ngIf="!isDataAvailable" class="page__section page__section--full-width" style="min-height: 60vh;">
 
-    <div *ngIf="!isDataAvailable">
+    <div >
 
       <div class="indicators-container growy-three-circles">
         <span class="circle one"></span>
@@ -12,21 +12,39 @@
 
     </div>
 
+  </section>
+
     <div *ngIf="isDataAvailable">
 
-      <app-whirligig
-        [projects_cda]="projects_cda">
-      </app-whirligig>
+      <section class="page__section" *ngFor="let project of projects_cda" (click)="this.router.navigate(['/projects/'+project.fields.slug])">
 
-      <!-- <hr>
+        <div class="project-item flex page__wrapper">
 
-      <div *ngFor="let project of projects_cda">
-        <app-project-card [project]="project"></app-project-card>
-      </div> -->
+          <div class="project-item__content left">
+            <h2 [innerHtml]="project.fields.title"></h2>
+            <p [innerHtml]="project.fields.subtitle"></p>
+
+            <div class="project-item__actions">
+              <button mat-raised-button>Check it out</button>
+            </div>
+
+          </div>
+          <div class="project-item__hero-img right">
+            <img
+            mat-card-image
+            [src]="project.fields.hero.fields.file.url"
+            [alt]="project.fields.hero.fields.description"
+            [height]="project.fields.hero.fields.file.details.image.height"
+            [width]="project.fields.hero.fields.file.details.image.width"
+            >
+          </div>
+        </div>
+
+      </section>
 
     </div>
 
 
-  </section>
+
 
 </article>
