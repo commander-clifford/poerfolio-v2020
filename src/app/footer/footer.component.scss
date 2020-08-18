@@ -8,7 +8,23 @@
 
   max-width: 720px;
   margin: 0 auto;
-  background: rgba($color-red, 0.1);
+  // background: rgba($color-red, 0.1);
+
+
+
+  display: flex;
+align-items: center;
+justify-content: space-evenly;
+border-radius: 4px;
+padding: 1em 2em 0 2em;
+max-width: 720px;
+margin: 0 auto;
+// flex-direction: column;
+// text-align: center;
+
+
+
+
   &__avatar {
     img { display: block; }
     // border-radius: 50%;

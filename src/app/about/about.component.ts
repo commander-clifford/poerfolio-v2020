@@ -19,6 +19,7 @@ export class AboutComponent implements OnInit {
   public projects: object;
   public selectedProject: Project;
   public projects_cda: Entry<any>[] = []; // define a private class property to the class which defines that this component will include a collection of several projects
+  public blogPosts_cda;
 
   constructor(
     public route: ActivatedRoute,
@@ -29,12 +30,17 @@ export class AboutComponent implements OnInit {
   ) { }
 
   getProjects(): void {
-    this.projects = this.projectService.getProjects();
+    // this.projects = this.projectService.getProjects();
 
     // the contenful way
     this.contentfulApiService.getProjects()
       .then(projects_cda => this.projects_cda = projects_cda)
       .then(projects_cda => console.log('Portfolio pieces',projects_cda));
+
+    this.contentfulApiService.getBlogPosts()
+      .then(blogPosts_cda => this.blogPosts_cda = blogPosts_cda)
+      .then(blogPosts_cda => console.log('Blog Posts',blogPosts_cda));
+
   }
 
   ngOnInit() {

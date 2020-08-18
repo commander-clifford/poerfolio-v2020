@@ -78,12 +78,12 @@ export const PROJECTS: Project[] = [
 
   {
     id: 16,
-    name: 'Doodle Space',
+    name: '!Doodle Space',
     thumbnail: {
       url: './assets/hp-1.png',
       alt: 'Google homepage prototype',
     },
-    brief: 'Exploring the Google Doodle universe',
+    brief: '!Exploring the Google Doodle universe',
     url: null,
     githubUrl: null,
     codepenUrl: null,

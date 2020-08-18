@@ -19,50 +19,7 @@
     </div>
   </section> -->
 
-  <!-- <app-instagram-feed sort="most-recent"></app-instagram-feed> -->
-
-  <!-- portfolio -->
-  <section class="page__section">
-    <div class="page__wrapper">
-      <h2 class="page__headline">Projects</h2>
-      <i>this section is set for demolition and re-construction</i>
-      <app-whirligig
-        [projects_cda]="projects_cda">
-      </app-whirligig>
-
-      <div *ngIf="false"  class="contain">
-
-        <div class="row">
-          <div class="row__inner">
-
-            <div class="tile" style="width: 60px;"></div>
-
-            <div
-              *ngFor="let project of projects | orderBy: 'id':true"
-              class="tile"
-              (click)="this.router.navigate(['/projects/'+project.id])"
-            >
-              <div class="tile__media">
-                <img class="tile__img" [src]="project.thumbnail.url" />
-              </div>
-              <div class="tile__details">
-                <div
-                  class="tile__title"
-                  [innerHtml]="project.name"
-                  >
-                </div>
-              </div>
-            </div>
-
-
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- about me -->
+  <!-- ABOUT ME -->
   <section class="page__section">
     <div class="page__wrapper">
       <h2 class="page__headline">About Me</h2>
@@ -207,6 +164,7 @@
     </div>
   </section>
 
+  <!-- PAST -->
   <section class="page__section">
     <div class="page__wrapper">
       <div class="intro">
@@ -220,6 +178,7 @@
     </div>
   </section>
 
+  <!-- CURRENT -->
   <section class="page__section">
     <div class="page__wrapper">
       <h2 class="page__headline">Right Now</h2>
@@ -288,9 +247,53 @@
     </div>
   </section>
 
+  <!-- PROJECTS -->
+  <section class="page__section">
+    <div class="page__wrapper">
+      <h2 class="page__headline">Projects</h2>
+
+      <!-- <app-whirligig
+        [projects_cda]="projects_cda">
+      </app-whirligig> -->
+
+      <div *ngIf="true"  class="contain">
+
+        <div class="row">
+          <div class="row__inner">
+
+            <div class="tile" style="width: 60px;"></div>
+
+            <div
+              *ngFor="let project of projects_cda"
+              class="tile"
+              (click)="this.router.navigate(['/projects/'+project.fields.slug])"
+            >
+              <div class="tile__media">
+                <img
+                  mat-card-image
+                  [src]="project.fields.hero.fields.file.url"
+                  [alt]="project.fields.hero.fields.description"
+                  [height]="project.fields.hero.fields.file.details.image.height"
+                  [width]="project.fields.hero.fields.file.details.image.width"
+                >
+              </div>
+              <div class="tile__details">
+                <div
+                  class="tile__title"
+                  [innerHtml]="project.fields.title"
+                  >
+                </div>
+
+              </div>
+            </div>
 
 
-  <app-instagram-feed sort="most-liked"></app-instagram-feed>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
   <app-footer></app-footer>
 
