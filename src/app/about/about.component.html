@@ -20,9 +20,23 @@
   </section> -->
 
   <!-- ABOUT ME -->
+
+  <div *ngIf="isDataAvailable">
+    <app-page-section
+      *ngFor="let section of aboutPage_cda.fields.sections"
+      [section]="section"
+    >
+    </app-page-section>
+  </div>
+
+
+
+
   <section class="page__section">
     <div class="page__wrapper">
+
       <h2 class="page__headline">About Me</h2>
+
       <div class="flex">
 
         <div class="left">

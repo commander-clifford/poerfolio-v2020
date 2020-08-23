@@ -63,8 +63,15 @@
   }
 
   &__deets {
-    font-size: 1.2em;
-    line-height: 1.8em;
+    p {
+      font-size: 1.2em;
+      line-height: 1.8em;
+    }
+    a {
+      color: white;
+      text-shadow: -1px 1px 1px rebeccapurple;
+      font-weight: bold;
+    }
   }
 
   &__desc {

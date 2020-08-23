@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener , ViewEncapsulation} from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
 import $ from "jquery";
@@ -16,27 +16,55 @@ import {
   Elastic,
   Back,
 } from "gsap/all";
-
 import SplitTextJS from 'split-text-js';
 
+// Contentful Dependancies
 
+import { ContenfulApiService } from '../contenful-api.service';
+import { Entry } from 'contentful';
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
 
 @Component({
   selector: 'app-cover',
   templateUrl: './cover.component.html',
-  styleUrls: ['./cover.component.scss']
+  styleUrls: ['./cover.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 
 export class CoverComponent implements OnInit {
 
+  public isDataAvailable: boolean = false; // logic to know if content is available yet
+  public cover_cda: Entry<any>; // define a private class property to the class which defines that this component will include a collection of several projects
   private spicy = "this is my text";
   private mySplitText:any;
+  public briefHTML;
 
   constructor(
     private location: Location,
     public router: Router,
+    public contentfulApiService: ContenfulApiService,
   ) {}
+
+  getCover(): void {
+
+    // the contenful way
+    this.contentfulApiService.getCover()
+      .then(cover_cda => this.cover_cda = cover_cda[0])
+      .then(cover_cda => console.log('** Cover Content:',cover_cda))
+      .then(() => this.loadPage());;
+  }
+
+  loadPage(){
+    this.isDataAvailable = true;
+    setTimeout(function(){
+
+
+      this.animation();
+
+
+    }.bind(this),40);
+  }
 
   @HostListener("window:scroll", ['$event'])
   scrollMe(event) {
@@ -72,13 +100,9 @@ export class CoverComponent implements OnInit {
 
   ngOnInit() {
 
-    let headline = document.getElementById('cover__headline');
-    this.mySplitText = new SplitTextJS(headline);
+    this.getCover();
 
-    console.log('000000000',this.mySplitText);
-    console.log('000000000',this.mySplitText.chars);
 
-    this.animation();
 
 
     // Select all links with hashes
@@ -136,11 +160,36 @@ export class CoverComponent implements OnInit {
 
   animation() {
 
+    let content = this.cover_cda.fields.brief;
+    let options = {
+      renderNode: {
+        'embedded-asset-block': (node) => {
+          let file = node.data.target.fields.file;
+          let markup = this.renderMedia(file);
+          return markup
+        }
+      }
+    }
+    this.briefHTML = content ? documentToHtmlString(content, options) : 'loading';
+
+
+
+    let headline = document.getElementById('cover__headline');
+
+    this.mySplitText = new SplitTextJS(headline);
+
+    console.log('Split Text Animation',this.mySplitText);
+    console.log('Split Text Animation',this.mySplitText.chars);
+
     var tl = new TimelineMax({
       delay: 0.8,
     });
 
     // tl.to('p.fade-in', 0, {visibility: 'hidden', opacity: 0})
+
+    tl.to('.cover__intro', 0.1, {
+      opacity: 1,
+    });
 
 
     tl.from('.cover__greeting', 0.1, {

@@ -4,18 +4,30 @@
 
   >
 
-  <div class="cover__content">
+  <div *ngIf="!isDataAvailable">
+    <div class="cover__content">
 
-    <div class="cover__intro">
-      <p class="cover__greeting">Hi! I'm </p>
-      <h3 id="cover__headline" class="cover__headline">Clifford Ryan Nelson</h3>
+    </div>
+  </div>
+
+
+  <div *ngIf="isDataAvailable">
+    <div class="cover__content">
+
+    <div class="cover__intro" [style.opacity]="0">
+      <!-- <p class="cover__greeting">Hi! I'm </p> -->
+      <p class="cover__greeting" [innerHtml]="cover_cda.fields.intro"></p>
+      <!-- <h3 id="cover__headline" class="cover__headline">Clifford Ryan Nelson</h3> -->
+      <h3 id="cover__headline" class="cover__headline"> {{cover_cda.fields.name}}</h3>
     </div>
 
     <br/>
 
-    <p class="cover__deets">
+    <div class="cover__deets" [innerHtml]="this.briefHTML"></div>
 
-      I write code, make things, and create digital experiences.
+    <!-- <p class="cover__deets">
+
+      !!I write code, make things, and create digital experiences.
       <br/>
       Currently Design Prototyper contracting at Netflix.
     </p>
@@ -25,9 +37,12 @@
       <a class="link" (click)="router.navigate(['/resume/'])">my resume</a>
       or see me on
       <a href="https://codepen.io/commander-clifford">Codepen.io</a>
-    </p>
+    </p> -->
 
+    </div>
   </div>
+
+
 
 
 

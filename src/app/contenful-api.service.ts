@@ -24,11 +24,29 @@ export class ContenfulApiService {
 
   constructor() { }
 
+  public getCover(query?: object): Promise<Entry<any>[]> {
+    return this.cdaClient.getEntries(Object.assign({
+      content_type: 'cover',
+      // order: '-fields.displayOrder',
+      // limit: 1,
+    }, query))
+    .then(response => response.items);
+  }
+
   public getBlogPosts(query?: object): Promise<Entry<any>[]> {
     return this.cdaClient.getEntries(Object.assign({
       content_type: 'blogPost',
       // order: '-fields.displayOrder',
       limit: 4,
+    }, query))
+    .then(response => response.items);
+  }
+
+  public getAboutPage(query?: object): Promise<Entry<any>[]> {
+    return this.cdaClient.getEntries(Object.assign({
+      content_type: 'aboutPage',
+      // order: '-fields.displayOrder',
+      // limit: 4,
     }, query))
     .then(response => response.items);
   }
