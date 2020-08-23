@@ -19,11 +19,9 @@ import {
 import SplitTextJS from 'split-text-js';
 
 // Contentful Dependancies
-
 import { ContenfulApiService } from '../contenful-api.service';
 import { Entry } from 'contentful';
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
-
 
 @Component({
   selector: 'app-cover',
@@ -199,13 +197,15 @@ export class CoverComponent implements OnInit {
     tl.staggerFromTo(this.mySplitText.chars, 0.5,
       {
         opacity: 0,
-        bottom: -80,
-        ease: Back.easeOut.config(1.7),
+        top: -20,
+        scale: 1.2,
+        ease: Back.easeOut.config(1.8),
       },
       {
         opacity: 1,
-        bottom: 0,
-        ease: Back.easeOut.config(1.7),
+        top: 0,
+        scale: 1,
+        ease: Back.easeOut.config(1.8),
       },
       0.05
     );

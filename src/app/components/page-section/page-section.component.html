@@ -1,6 +1,135 @@
 <section class="page-section page__section">
 
-  <div class="page__wrapper">
+  <div *ngIf="section.fields.splitView" class="page__wrapper">
+    <div class="flex">
+      <div class="left">
+        <h2 class="page__headline page-section__title" [innerHtml]="section.fields.title"></h2>
+        <div
+          class="page-section__content"
+          [innerHtml]="this.bodyHTML | sanitizeHtml">
+        </div>
+      </div>
+
+
+      <div class="right">
+
+        <div
+          id="resume"
+          class="resume"
+          (click)="router.navigate(['/resume/'])"
+          >
+
+          <div class="resume__blur">
+
+              <h1 class="resume_headline">Clifford Ryan Nelson</h1>
+
+              <!-- -_-_-_-_-_-_-_-_-_-_-_-_-_-_- -->
+
+              <h2 class="resume_sub-headline">Education</h2>
+
+              <p class="resume_title"><span class="title">Platt College San Diego</span><br> Bachelors&nbsp;of&nbsp;Science&nbsp;in&nbsp;Media&nbsp;Arts - 2014</p>
+              <ul class="un-list">
+                <li><span class="list-title">GPA:</span> 4.0, Class Valedictorian</li>
+                <li><span class="list-title">Relevant Coursework:</span> Fundamentals of Web Design, Web Campaign Implementation, Design for Usability, Responsive Web Design, Programming for Designers, Scripting for the Web, Content Management Systems</li>
+              </ul>
+
+              <!-- -_-_-_-_-_-_-_-_-_-_-_-_-_-_- -->
+
+              <h2 class="resume_sub-headline">Technical</h2>
+
+              <ul class="un-list">
+                <li><span class="list-title">Design Canvas:</span> Angular + Material + (GSAP, threeJS, box2D)</li>
+                <li><span class="list-title">Languages &amp; Frameworks:</span> HTML, CSS (LESS/SASS), JavaScript, jQuery, React, Angular, JSON, PHP, MySQL</li>
+                <li><span class="list-title">Keywords:</span>Web Design, Web Development, Responsive Wed Design, HTML5, CSS3 (LESS/SCSS), JavaScript, JSON, TypeScript, ES6, jQuery, NPM, GSAP, PIXI, Box2D, Planck, three.js, canvas, Angular, Material, Bootstrap, Grunt/Gulp, PHP, Git, UI/UX Prototyping, Adobe Creative Suite, CLI</li>
+
+              </ul>
+
+              <!-- -_-_-_-_-_-_-_-_-_-_-_-_-_-_- -->
+
+              <h2 class="resume_sub-headline">Recent Positions</h2>
+
+              <ul class="un-list experience-list">
+
+
+                <li class="experience-list__item">
+                  <span class="list-title">Design Prototyper @ Netflix [First Professional Services]</span><span class="text-right"></span>
+                  <p>
+                    Using web technologies to create hi-fidelity prototypes to simulate multiple environments for user testing, research and design feasibility. Contributing to core design systems and audience growth. Platform include but not limited to TV, web and mobile.
+                  </p>
+                  <ul class="list--flat">
+                    <li>React</li>
+                    <li>Redux</li>
+                    <li>GSAP</li>
+                    <li>PIXI</li>
+                    <li>HTML</li>
+                    <li>CSS/SCSS</li>
+                  </ul>
+                </li>
+
+                <li class="experience-list__item">
+                  <span class="list-title">Creative Technologist / Prototyper @ Google [Synergis]</span><span class="text-right"></span>
+                  <p>
+                    Used web technologies to create hi-fidelity prototypes for the Doodle team. Created simulated environments to test ideas and games. Contributed to the 10 year vision of Google’s personality and brand. Generated prototypes to rapidly iterate through ideas in low to high-fidelity. Game design prototyping. Homepage prototyping for Doodles.
+                  </p>
+                  <ul class="list--flat">
+                    <li>Angular</li>
+                    <li>GSAP</li>
+                    <li>Material</li>
+                    <li>Box2D</li>
+                  </ul>
+
+                  <!-- <ul>
+                    <li>Contribute to Doodle team</li>
+                    <li>Create prototypes to quickly exploring ideas</li>
+                    <li>Motion Design, Game Design, UX Design</li>
+                    <li>Environments are ad-hoc, typically newest Angular + Material</li>
+                  </ul> -->
+                </li>
+
+                <!-- <li class="experience-list__item">
+                  <span class="list-title">Design Engineer, 2017–2018 @ Uber [TekSystems]</span><span class="text-right"></span>
+                  <p>Collaborate closely with Design team to deliver engaging experiences using the latest in front-end
+                  technologies like React. Responsible for customer facing efforts such as the blog, about and FAQ pages. Design
+                  and build internal tools to make tedious and/or difficult tasks easy and efficient for non-technical content
+                  providers.</p>
+                  <ul class="list--flat">
+                    <li>React</li>
+                    <li>HTML/SCSS/JS</li>
+                    <li>Canvas</li>
+                    <li>CMS</li>
+                  </ul>
+                  <ul>
+                    <li>Environment:</li>
+                    <li>Build internal tools to aid marketing efforts</li>
+                    <li>Integrate with Contentful CMS</li>
+                  </ul>
+                </li> -->
+
+              </ul>
+
+          </div>
+          <!-- <br/>
+          <div class="">
+              <a
+                href="./assets/clifford_nelson_resume.pdf"
+                class="social__link"
+                target="_blank"
+                mat-button
+                color="secondary">
+                <span class="social__icon icon-resume"></span>
+                Download the full resume.pdf
+
+              </a>
+          </div> -->
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+  <div *ngIf="!section.fields.splitView" class="page__wrapper">
     <h2 class="page__headline page-section__title" [innerHtml]="section.fields.title"></h2>
 
     <div
