@@ -15,10 +15,10 @@
         font-size: 2em;
         line-height: 1;
         @include md {
-          font-size: 4em;
+          font-size: 2em;
         }
         @include lg {
-          font-size: 4em;
+          font-size: 2em;
         }
       }
       &__client {}
@@ -27,10 +27,10 @@
         font-family: 'Teko', sans-serif;
         font-size: 1.4em;
         @include md {
-          font-size: 2em;
+          font-size: 1.6em;
         }
         @include lg {
-          font-size: 2em;
+          font-size: 1.6em;
         }
       }
     }

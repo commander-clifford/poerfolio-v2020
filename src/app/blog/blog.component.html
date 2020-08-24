@@ -1,0 +1,32 @@
+
+
+
+
+  <article id="blog" class="blog page">
+
+    <div *ngIf="!isDataAvailable">
+      <section *ngIf="false" class="page__section">
+        <div class="page__wrapper">
+          LOADING
+        </div>
+      </section>
+    </div>
+
+    <div *ngIf="isDataAvailable">
+
+          <app-blog-section
+            *ngFor="let section of blogPosts_cda"
+            [section]="section"
+          >
+          </app-blog-section>
+
+
+
+      <!-- <app-page-section
+        *ngFor="let section of aboutPage_cda.fields.sections"
+        [section]="section"
+      >
+      </app-page-section> -->
+    </div>
+
+  </article>

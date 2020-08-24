@@ -1,0 +1,20 @@
+<section class="page-section page__section">
+
+  <div *ngIf="!section.fields.splitView" class="page__wrapper">
+    <h2 class="page__headline page-section__title" [innerHtml]="section.fields.title"></h2>
+
+    <h5>The Ask:</h5>
+    <p
+      class="blog-section__quote"
+      [innerHtml]="section.fields.description"
+    ></p>
+
+    <h5>My Reply:</h5>
+    <div
+      class="page-section__content"
+      [innerHtml]="this.bodyHTML | sanitizeHtml"
+      >
+    </div>
+  </div>
+
+</section>

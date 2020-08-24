@@ -36,8 +36,8 @@ export class ContenfulApiService {
   public getBlogPosts(query?: object): Promise<Entry<any>[]> {
     return this.cdaClient.getEntries(Object.assign({
       content_type: 'blogPost',
-      // order: '-fields.displayOrder',
-      limit: 4,
+      order: 'fields.publishDate',
+      // limit: 4,
     }, query))
     .then(response => response.items);
   }

@@ -52,6 +52,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { InstagramFeedComponent } from './components/instagram-feed/instagram-feed.component';
 import { PageSectionComponent } from './components/page-section/page-section.component';
+import { BlogComponent } from './blog/blog.component';
+import { BlogSectionComponent } from './components/blog-section/blog-section.component';
 
 // import { NgGxSplitTextModule } from 'ng-gx-split-text';
 
@@ -74,7 +76,9 @@ import { PageSectionComponent } from './components/page-section/page-section.com
     WhirligigComponent,
     FooterComponent,
     SanitizeHtmlPipe,
-    PageSectionComponent
+    PageSectionComponent,
+    BlogComponent,
+    BlogSectionComponent
   ],
   imports: [
     AppRoutingModule,

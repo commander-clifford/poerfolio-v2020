@@ -4,6 +4,7 @@ import { CustomReuseStrategy } from './route.reuse';
 import { CoverComponent }   from '../cover/cover.component';
 import { HomeComponent }   from '../home/home.component';
 import { AboutComponent }   from '../about/about.component';
+import { BlogComponent }   from '../blog/blog.component';
 import { ResumeComponent }   from '../resume/resume.component';
 import { PortfolioComponent }   from '../portfolio/portfolio.component';
 import { ProjectsComponent }   from '../projects/projects.component';
@@ -18,7 +19,8 @@ const routes: Routes = [
   // { path: 'about', component: AboutComponent, data: { state: 'about' } },
   { path: 'resume', component: ResumeComponent, data: { state: 'resume' } },
   { path: 'portfolio', component: PortfolioComponent, data: { state: 'portfolio' } },
-  
+  { path: 'blog', component: BlogComponent, data: { state: 'blog' } },
+
   { path: 'projects', component: ProjectsComponent, data: { state: 'projects' },
       children: [
         { path: '', redirectTo: '/', pathMatch: 'full'},

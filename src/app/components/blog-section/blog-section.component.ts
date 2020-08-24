@@ -4,21 +4,23 @@ import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
-  selector: 'app-page-section',
-  templateUrl: './page-section.component.html',
-  styleUrls: ['./page-section.component.scss']
+  selector: 'app-blog-section',
+  templateUrl: './blog-section.component.html',
+  styleUrls: ['./blog-section.component.scss']
 })
 
-export class PageSectionComponent implements OnInit {
+export class BlogSectionComponent implements OnInit {
 
   @Input() section: Entry<any>;
   public bodyHTML;
 
   constructor(
     public router: Router,
-  ) {}
+  ) { }
 
   ngOnInit(): void {
+
+    console.log("SECTION:",this.section.fields);
 
     let content = this.section.fields.content;
     let options = {

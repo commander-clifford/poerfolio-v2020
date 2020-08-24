@@ -6,7 +6,8 @@
   @include md {
     display: grid;
     grid-template-rows: 100%;
-    grid-template-columns: 3fr 6fr 1fr;
+    grid-template-columns: 3fr 7fr 2fr;
+    // grid-template-columns: 2fr 7fr 1fr;
     grid-column-gap: 4em;
 
     &__left {
@@ -34,7 +35,7 @@
     padding: 0;
     margin: 0;
     text-align: left;
-    
+
     @include md {
       text-align: right;
     }

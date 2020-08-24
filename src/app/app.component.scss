@@ -68,10 +68,12 @@
     // background-color: transparent;
   }
 
+  // TODO: fix this - use backwards approach 
   &__main {
     &.project,
     &.projects,
     &.portfolio,
+    &.blog,
     &.resume,
     &.about {
       padding-top: 4em;
